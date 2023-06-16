@@ -1,4 +1,4 @@
-package parallel;
+package Runners;
 
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -7,7 +7,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
-import Pageclasses.LoginPage;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;

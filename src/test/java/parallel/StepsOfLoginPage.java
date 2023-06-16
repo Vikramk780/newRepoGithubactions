@@ -30,7 +30,7 @@ public class StepsOfLoginPage {
 		prop=configreader.initialize_prop();
 		
 		driverFactory=new DriverFactory();
-		driverFactory.init_Driver(prop.getProperty("browser"));
+//		driverFactory.init_Driver(prop.getProperty("browser"));
 		driverFactory.getDriver().get(prop.getProperty("website"));
 		
 	}
