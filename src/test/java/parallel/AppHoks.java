@@ -52,7 +52,9 @@ public void init_properties() throws FileNotFoundException {
 		if(sc.isFailed()) {
 			
 			String scenarioname =sc.getName().replaceAll(" ", "-");
-			byte[] sourceofscrennshot=((TakesScreenshot)ldriver).getScreenshotAs(OutputType.BYTES);
+			TakesScreenshot sc1 = (TakesScreenshot) ldriver;
+			byte[] sourceofscrennshot=sc1.getScreenshotAs(OutputType.BYTES);
+			//byte[] sourceofscrennshot=((TakesScreenshot)ldriver).getScreenshotAs(OutputType.BYTES);
 			sc.attach(sourceofscrennshot, "img/png", scenarioname);
 			
 		}

@@ -17,10 +17,10 @@
 
 		<protocol>http</protocol>
 		<!-- title of the document -->
-		<documentTitle>Botprise</documentTitle>
+		<documentTitle>Automation</documentTitle>
 		<!-- report name - displayed at top-nav -->
 
-		<reportName>Botprise Report</reportName>
+		<reportName>Automation Report</reportName>
 		<!-- location of charts in the test view -->
 
 		<!-- top, bottom -->

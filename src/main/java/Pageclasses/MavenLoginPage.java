@@ -26,6 +26,8 @@ public class MavenLoginPage {
 		
 	}
 	
+	
+	
 	@FindBy(css="input[name=\"username\"]")
 	private WebElement loginfield;	
 	
