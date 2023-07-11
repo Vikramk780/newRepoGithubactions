@@ -22,13 +22,8 @@ public class DriverFactory {
 		if(browser.equals("chrome")) {
 
                          WebDriverManager.chromedriver().setup();
-	    ChromeOptions options = new ChromeOptions();
-	    options.addArguments("--remote-allow-origins=*");
-            options.addArguments("--no-sandbox");
-            options.addArguments("--disable-dev-shm-usage");
-            options.addArguments("--headless");
-	    driver = new ChromeDriver(options);
-	   
+	    WebDriverManager.chromedriver().setup();
+			tlDriver.set(new ChromeDriver());
 
 			
 			
