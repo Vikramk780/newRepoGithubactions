@@ -1,10 +1,10 @@
 package maven.DriverFactory;
 
-import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -21,8 +21,19 @@ public class DriverFactory {
 		
 		if(browser.equals("chrome")) {
 			
+			
 			WebDriverManager.chromedriver().setup();
-			tlDriver.set(new ChromeDriver());
+		    ChromeOptions options = new ChromeOptions();
+		    options.addArguments("--remote-allow-origins=*");
+	            options.addArguments("--no-sandbox");
+	            options.addArguments("--disable-dev-shm-usage");
+	            options.addArguments("--headless");
+	           
+	           
+		   
+			
+			//WebDriverManager.chromedriver().setup();
+			tlDriver.set(new ChromeDriver(options));
 		}else if(browser.equals("firefox")){
 			
 			WebDriverManager.firefoxdriver().setup();

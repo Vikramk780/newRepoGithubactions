@@ -1,6 +1,8 @@
 package parallel;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Base64;
 import java.util.Properties;
 
 import org.openqa.selenium.OutputType;
@@ -48,14 +50,25 @@ public void init_properties() throws FileNotFoundException {
 	
 	@After(order=1)
 	
-	public void getScrenshotiffail(Scenario sc) {
+	public void getScrenshotiffail(Scenario sc) throws IOException {
 		if(sc.isFailed()) {
 			
-			String scenarioname =sc.getName().replaceAll(" ", "-");
-			TakesScreenshot sc1 = (TakesScreenshot) ldriver;
-			byte[] sourceofscrennshot=sc1.getScreenshotAs(OutputType.BYTES);
-			//byte[] sourceofscrennshot=((TakesScreenshot)ldriver).getScreenshotAs(OutputType.BYTES);
-			sc.attach(sourceofscrennshot, "img/png", scenarioname);
+			
+//			TakesScreenshot ts = (TakesScreenshot) driverFactory.getDriver();
+//			
+//			File screen =ts.getScreenshotAs(OutputType.FILE);
+//			File storage = new File("C:\\CodStudio\\ParallelBlog\\src\\test\\resources\\Screnshotss\\newiqsmage.png");
+//			FileUtils.copyFile(screen, storage);
+			
+			String scenarioName = sc.getName().replaceAll(" ", "-");
+			TakesScreenshot ts = (TakesScreenshot) driverFactory.getDriver();
+
+			// Capture the screenshot as Base64 string
+			String sourceOfScreenshot = ts.getScreenshotAs(OutputType.BASE64);
+
+			// Attach the screenshot as an image
+			byte[] screenshotBytes = Base64.getDecoder().decode(sourceOfScreenshot);
+			sc.attach(screenshotBytes, "image/png", scenarioName);
 			
 		}
 		

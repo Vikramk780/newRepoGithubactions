@@ -78,7 +78,7 @@
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.tngtech.java/junit-dataprovider -->
-		
+
 
 	</dependencies>
 
@@ -98,6 +98,10 @@
 								<value>2</value>
 							</property>
 						</properties>
+
+						<!-- <includes>
+							<include>**/RunnerTests.java</include>
+						</includes>-->
 					</configuration>
 				</plugin>
 				<!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->

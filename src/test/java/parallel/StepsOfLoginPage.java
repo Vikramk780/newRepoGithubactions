@@ -1,8 +1,10 @@
 package parallel;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Properties;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.testng.asserts.SoftAssert;
 
@@ -36,11 +38,11 @@ public class StepsOfLoginPage {
 	}
 
 	@Then("User logs in to app")
-	public void user_logs_in_to_app() throws FileNotFoundException {
+	public void user_logs_in_to_app() throws IOException, InterruptedException {
 		mavenLoginPage=new MavenLoginPage(DriverFactory.getDriver());
 		mavenLoginPage.doLogin();
 		String title=driverFactory.getDriver().getTitle();
-//		Assert.assertEquals(title,"OrangeHRm");
+	Assert.assertEquals(title,"OrangeHRma");
 		
 		SoftAssert a = new SoftAssert();
 		a.assertEquals(title, "OrangeHRm");
