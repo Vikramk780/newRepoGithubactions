@@ -20,6 +20,7 @@ public class DriverFactory {
 		System.out.println("Hey buddy your are using "+browser+" browser");
 		
 		if(browser.equals("chrome")) {
+
 			
 			
 			WebDriverManager.chromedriver().setup();
@@ -34,6 +35,15 @@ public class DriverFactory {
 			
 			//WebDriverManager.chromedriver().setup();
 			tlDriver.set(new ChromeDriver(options));
+
+
+                         WebDriverManager.chromedriver().setup();
+	    WebDriverManager.chromedriver().setup();
+			tlDriver.set(new ChromeDriver());
+
+			
+			
+
 		}else if(browser.equals("firefox")){
 			
 			WebDriverManager.firefoxdriver().setup();
