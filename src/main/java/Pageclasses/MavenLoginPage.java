@@ -43,7 +43,7 @@ public class MavenLoginPage  {
 	@FindBy(css="input[name=\"password\"]")
 	private WebElement passwordfield;
 	
-	@FindBy(css="button[type=\"submitt\"]")
+	@FindBy(css="button[type=\"submit\"]")
 	private WebElement loginbtn;
 	
 	
