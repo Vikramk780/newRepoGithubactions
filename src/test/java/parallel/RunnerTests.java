@@ -17,7 +17,7 @@ plugin = {"pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumber
 })
 public class RunnerTests extends AbstractTestNGCucumberTests {
    @Override
-   @DataProvider(parallel = true )
+   @DataProvider(parallel = false )
    public Object[][] scenarios() {
    return super.scenarios();
    }
