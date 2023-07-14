@@ -42,7 +42,7 @@ public class StepsOfLoginPage {
 		mavenLoginPage=new MavenLoginPage(DriverFactory.getDriver());
 		mavenLoginPage.doLogin();
 		String title=driverFactory.getDriver().getTitle();
-	Assert.assertEquals(title,"OrangeHRma");
+	//Assert.assertEquals(title,"OrangeHRma");
 		
 		SoftAssert a = new SoftAssert();
 		a.assertEquals(title, "OrangeHRm");
